@@ -3,6 +3,35 @@ import home from "../assets/home-avatar.jpeg"
 import './Home.css';
 
 const Home = () => {
+    const handleTakePhoto = () => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        input.capture = 'camera';
+    
+        input.addEventListener('change', (event) => {
+          const file = event.target.files[0];
+          if (file) {
+            console.log("Image captured:", file);
+    
+            const reader = new FileReader();
+    
+            reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '100px';
+                document.body.appendChild(img);
+    
+            }
+    
+            reader.readAsDataURL(file);
+          }
+        });
+    
+        input.click();
+      };
+
+      
   return (
     <div className="profile-container">
       {/* Header */}
@@ -38,7 +67,7 @@ const Home = () => {
       </div>
 
       <div className="action-buttons">
-        <button className="take-photo-button">
+        <button className="take-photo-button" onClick={handleTakePhoto}>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
         <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v10zM2 4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1z"/>
         <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
