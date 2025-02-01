@@ -23,7 +23,6 @@ const Home = () => {
                 const img = document.createElement('img');
                 img.src = e.target.result;
                 img.style.maxWidth = '100px';
-                document.body.appendChild(img);
             }
     
             reader.readAsDataURL(file);
