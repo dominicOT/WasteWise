@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/rr.png';
 import googleIcon from '../assets/google-icon.svg';
 import "./SignIn.css"
 
 const SignIn = () => {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/auth");
+  };
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -17,7 +23,7 @@ const SignIn = () => {
       <div className="sign-in-card">
         {/* Back Arrow */}
         <div className="back-arrow-container">
-          <a href="#" className="back-arrow">
+          <a href="#" className="back-arrow" onClick={handleButtonClick}>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               className="back-arrow-icon" 
