@@ -1,26 +1,33 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/rr.png";
+import google from "../assets/google-icon.svg";
+import "./Auth.css";
 
 const Auth = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <img src={logo} alt="WasteWise" className="w-18 mb-4" />
-      <h1 className="text-3xl font-semibold text-green-600 mt-10 mb-6">welcome</h1>
+    <div className="auth-container">
+      <div className="image-container">
+        <img src={logo} alt="WasteWise" className="image" />
+      </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg w-4/5 max-w-md">
-        <button className="w-full px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 mb-4">
-          create an account
-        </button>
-        <button className="w-full px-4 py-2 bg-gray-200 text-gray-800 rounded-lg shadow flex items-center justify-center hover:bg-gray-300">
-          <img src="/google-icon.svg" alt="Google" className="w-6 h-6 mr-2" />
-          continue with google
-        </button>
-        <p className="text-center text-sm mt-4">
-          Already have an account?{" "}
-          <a href="#" className="text-green-600 underline">
-            sign in
-          </a>
-        </p>
+      <div className="content-container">
+        <h1 className="welcome-heading">welcome</h1>
+
+        <div className="button-group">
+          <button className="create-account-button">
+            create an account
+          </button>
+          <button className="google-signin-button">
+            <img src={google} alt="Google" className="google-icon" />
+            continue with google
+          </button>
+          <p className="signin-prompt">
+            Already have an account?{" "}
+            <a href="#" className="signin-link">
+              sign in
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
