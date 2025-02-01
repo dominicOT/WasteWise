@@ -9,6 +9,9 @@ const SignIn = () => {
   const handleButtonClick = () => {
     navigate("/auth");
   };
+  const handleSignInClick = () => {
+    navigate("/home");
+  };
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -81,8 +84,7 @@ const SignIn = () => {
           </div>
           <button
             type="submit"
-            className="sign-in-button"
-          >
+            className="sign-in-button" onClick={handleSignInClick}>
             Sign In
           </button>
         </form>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-route
 import Welcome from "./Welcome/Welcome";
 import Auth from "./Auth/Auth";
 import SignIn from "./Auth/SignIn";
+import Home from "./Home/Home"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   );
