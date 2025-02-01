@@ -1,4 +1,5 @@
 import React from 'react';
+import home from "../assets/home-avatar.jpeg"
 import './Home.css';
 
 const Home = () => {
@@ -8,8 +9,7 @@ const Home = () => {
       <div className="header">
         <div className="profile-info">
           <div className="avatar">
-            {/* Replace with actual avatar image */}
-            <img src="home-avatar.jpg" alt="Avatar" /> 
+            <img src={home} alt="Avatar" /> 
           </div>
           <div className="user-details">
             <span className="user-name">User Name</span>
