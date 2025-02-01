@@ -1,42 +1,17 @@
-import { useState, useEffect } from "react";
-import splash from "./assets/splash.png";
-import "./App.css";
-
-function SplashScreen() {
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-600 text-white text-2xl font-semibold">
-      <img src={splash} className="w-20" alt="WasteWise" />
-      {/* <p className="mt-2 text-lg">Loading...</p> */}
-    </div>
-  );
-}
-
-function MainApp() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('/bg.png')" }}>
-      {/* <div className="absolute bottom-[30%] left-1/2 transform -translate-x-1/2">
-        <button className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
-          Get Started
-        </button>
-      </div> */}
-    </div>
-  );
-}
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Welcome from "./Welcome/Welcome";
+import Auth from "./Auth/Auth";
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 5000); // 5 seconds delay
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return showSplash ? <SplashScreen /> : <MainApp />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
