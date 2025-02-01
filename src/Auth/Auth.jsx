@@ -1,11 +1,11 @@
 import React from "react";
 import logo from "../assets/logo.png";
 
-const AuthScreen = () => {
+const Auth = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <img src={logo} alt="WasteWise" className="w-24 mb-4" />
-      <h1 className="text-2xl font-semibold text-green-600 mb-6">welcome</h1>
+      <img src={logo} alt="WasteWise" className="w-18 mb-4" />
+      <h1 className="text-3xl font-semibold text-green-600 mt-10 mb-6">welcome</h1>
 
       <div className="bg-white p-6 rounded-lg shadow-lg w-4/5 max-w-md">
         <button className="w-full px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 mb-4">
@@ -26,4 +26,4 @@ const AuthScreen = () => {
   );
 };
 
-export default AuthScreen;
+export default Auth;
