@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import logo from "../assets/rr.png";
 import google from "../assets/google-icon.svg";
 import "./Auth.css";
 
 const Auth = () => {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/signin");
+  };
+
   return (
     <div className="auth-container">
       <div className="image-container">
@@ -14,7 +21,7 @@ const Auth = () => {
         <h1 className="welcome-heading">welcome</h1>
 
         <div className="button-group">
-          <button className="create-account-button">
+          <button className="create-account-button" onClick={handleButtonClick}>
             create an account
           </button>
           <button className="google-signin-button">

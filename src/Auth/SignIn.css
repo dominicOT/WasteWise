@@ -1,0 +1,171 @@
+/* SignIn.css */
+.sign-in-container {
+    /* background-color: #f4f4f4; */
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-in-card {
+    background-color: white;
+    padding: 40px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    max-width: 400px; /* Adjust max width as needed */
+  }
+  
+  /* Back Arrow */
+  .back-arrow-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  
+  .back-arrow {
+    color: #777;
+    transition: color 0.3s;
+  }
+  
+  .back-arrow:hover {
+    color: #333;
+  }
+  
+  .back-arrow-icon {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Title */
+  .sign-in-title {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Logo */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .logo {
+    height: 64px; /* Adjust height as needed */
+  }
+  
+  /* Form */
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between form elements */
+  }
+  
+  .input-group {
+    margin-bottom: 16px; /* Space between input groups */
+  }
+  
+  .input-label {
+    display: block;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .input-field {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #2196f3; /* Example focus color */
+    box-shadow: 0 0 5px rgba(33, 150, 243, 0.2); /* Example focus shadow */
+  }
+  
+  .forgot-password {
+    display: block;
+    text-align: right;
+    color: #2196f3; /* Example link color */
+    margin-top: 8px;
+    transition: color 0.3s;
+  }
+  
+  .forgot-password:hover {
+    color: #1976d2; /* Example hover color */
+    text-decoration: underline;
+  }
+  
+  .sign-in-button {
+    background-color: #4caf50; /* Example button color */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sign-in-button:hover {
+    background-color: #45a049; /* Example hover color */
+  }
+  
+  /* Divider */
+  .divider-container {
+    position: relative;
+    margin: 24px 0; /* Adjust margin as needed */
+    display: flex;
+    align-items: center;
+  }
+  
+  .divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+  }
+  
+  .divider-text-container {
+    padding: 0 16px;
+    background-color: white;
+    z-index: 1;
+  }
+  
+  .divider-text {
+    color: #777;
+  }
+  
+  /* Google Sign-In */
+  .google-sign-in-button {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .google-sign-in-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .google-icon {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+  }
+  
+  /* Sign Up Link */
+  .sign-up-prompt {
+    text-align: center;
+    margin-top: 8px;
+  }
