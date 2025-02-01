@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import home from "../assets/home-avatar.jpeg"
+import upload from "../assets/cloud-upload.svg"
 import './Home.css';
 
 const Home = () => {
+    const [previewURL, setPreviewURL] = useState(null);
+
     const handleTakePhoto = () => {
         const input = document.createElement('input');
         input.type = 'file';
@@ -13,15 +16,14 @@ const Home = () => {
           const file = event.target.files[0];
           if (file) {
             console.log("Image captured:", file);
-    
             const reader = new FileReader();
     
             reader.onload = (e) => {
+                setPreviewURL(e.target.result);
                 const img = document.createElement('img');
                 img.src = e.target.result;
                 img.style.maxWidth = '100px';
                 document.body.appendChild(img);
-    
             }
     
             reader.readAsDataURL(file);
@@ -42,7 +44,6 @@ const Home = () => {
           </div>
           <div className="user-details">
             <span className="user-name">Anwarr</span>
-            {/* Add more user details if needed */}
           </div>
         </div>
         <div className="header-icons">
@@ -78,13 +79,19 @@ const Home = () => {
         </button>
       </div>
 
-      {/* Uploaded Photo Section */}
-      <div className="uploaded-photo-section">
-        <div className="photo-placeholder">
-          <img src="upload-icon.png" alt="Upload" className="upload-icon" />
-          uploaded photo
+
+        <div className="uploaded-photo-section">
+            <div className="photo-placeholder">
+                {previewURL ? (
+                <img src={previewURL} alt="Preview" className="uploaded-image" />
+                ) : (
+                <>
+                    <img src={upload} alt="Upload" className="upload-icon" />
+                    uploaded photo
+                </>
+                )}
+            </div>
         </div>
-      </div>
     </div>
   );
 };
