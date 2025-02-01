@@ -7,8 +7,8 @@ import "../App.css";
 
 function SplashScreen() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-600 text-white text-2xl font-semibold">
-      <img src={splash} className="w-20" alt="WasteWise" />
+    <div className="flex flex-col items-center justify-center h-screen text-white text-2xl font-semibold">
+      <img src={splash} className="w-30" alt="WasteWise" />
       {/* <p className="mt-2 text-lg">Loading...</p> */}
     </div>
   );
