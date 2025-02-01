@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import splash from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import "./Welcome.css"
 
 
 
@@ -17,17 +18,14 @@ function SplashScreen() {
 function MainApp() {
   const navigate = useNavigate();
   const handleButtonClick = () => {
-      navigate("/auth");
-    };
-  const [count, setCount] = useState(0);
+    navigate("/auth");
+  };
 
   return (
-    <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('/bg.png')" }}>
-      <div className="absolute bottom-[30%] left-1/2 transform -translate-x-1/2">
-        <button className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 transition" onClick={handleButtonClick}>
+    <div className="main-app-container">
+        <button className="start-button" onClick={handleButtonClick}>
           Get Started
         </button>
-      </div>
     </div>
   );
 }
