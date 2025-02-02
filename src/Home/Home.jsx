@@ -5,6 +5,9 @@ import './Home.css';
 
 const Home = () => {
     const [previewURL, setPreviewURL] = useState(null);
+    const [processing, setProcessing] = useState(false);
+    const [analysisResult, setAnalysisResult] = useState(null);
+    const [error, setError] = useState(null);
 
     const handleTakePhoto = () => {
         const input = document.createElement('input');
@@ -12,20 +15,47 @@ const Home = () => {
         input.accept = 'image/*';
         input.capture = 'camera';
     
-        input.addEventListener('change', (event) => {
+        input.addEventListener('change', async (event) => {
           const file = event.target.files[0];
           if (file) {
-            console.log("Image captured:", file);
-            const reader = new FileReader();
-    
-            reader.onload = (e) => {
-                setPreviewURL(e.target.result);
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.maxWidth = '100px';
-            }
+            setProcessing(true);
+            setAnalysisResult(null);
+            setError(null); // Clear any previous errors
+
+            try {
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    setPreviewURL(e.target.result);
+
+                    const formData = new FormData();
+                    formData.append('image', file);
+
+                    // Get API base URL from environment variable
+                    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+
+                    const response = await fetch(`${apiBaseUrl}/api/analyze`, {
+                        method: 'POST',
+                        body: formData,
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json(); // Try to get error details from the server
+                        throw new Error(`${response.status} ${response.statusText}: ${errorData.error || 'Image analysis failed'}`);
+                    }
+
+                    const data = await response.json();
+                    setAnalysisResult(data.result);
+
+                };
     
             reader.readAsDataURL(file);
+          }
+            catch (err) {
+              console.error("Error processing image:", err);
+              setError(err.message); // Set the error message to display
+          } finally {
+              setProcessing(false);
+          }
           }
         });
     
@@ -79,17 +109,32 @@ const Home = () => {
       </div>
 
 
-        <div className="uploaded-photo-section">
+      <div className="uploaded-photo-section">
             <div className="photo-placeholder">
                 {previewURL ? (
-                <img src={previewURL} alt="Preview" className="uploaded-image" />
+                    <img src={previewURL} alt="Preview" className="uploaded-image" />
                 ) : (
-                <>
-                    <img src={upload} alt="Upload" className="upload-icon" />
-                    uploaded photo
-                </>
+                    <>
+                        <img src={upload} alt="Upload" className="upload-icon" />
+                        uploaded photo
+                    </>
+                )}
+
+                {processing && ( // Conditionally render processing graphic
+                    <div className="processing-overlay">
+                        <div className="processing-spinner"></div> {/* Or any other graphic */}
+                        Processing...
+                    </div>
                 )}
             </div>
+
+            {/* Display Analysis Result */}
+            {analysisResult && (
+                <div className="analysis-result">
+                    <h2>Analysis Result:</h2>
+                    <p>{analysisResult}</p> {/* Display the result from the server */}
+                </div>
+            )}
         </div>
     </div>
   );
