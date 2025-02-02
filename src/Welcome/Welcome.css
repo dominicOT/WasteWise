@@ -1,15 +1,20 @@
 .main-app-container {
   height: 100vh;
-  background-image: url('public/bg.png');
+  background-image: url('/bg.png');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end; /* Align content to the bottom */
   justify-content: center;
-  padding-bottom: 30%;
-  
+  padding-bottom: 30%;  
 }
 
+.splash-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .start-button {
   padding: 1rem 1.5rem;
@@ -22,6 +27,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: var(font-family);
 }
 
 .start-button:hover {

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/rr.png';
 import googleIcon from '../assets/google-icon.svg';
 import "./SignIn.css"
+import { ArrowLeft } from "lucide-react"
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -27,15 +28,7 @@ const SignIn = () => {
         {/* Back Arrow */}
         <div className="back-arrow-container">
           <a href="#" className="back-arrow" onClick={handleButtonClick}>
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="back-arrow-icon" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7" />
-            </svg>
+            <ArrowLeft className='arrow-left'/>
           </a>
         </div>
 
@@ -44,10 +37,10 @@ const SignIn = () => {
           Sign into your account
         </h2>
 
-        {/* Logo */}
+        {/* Logo
         <div className="logo-container">
           <img src={logo} alt="WasteWise Logo" className="logo" />
-        </div>
+        </div> */}
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="sign-in-form">

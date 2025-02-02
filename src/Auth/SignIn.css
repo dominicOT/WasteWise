@@ -59,6 +59,8 @@
   /* Form */
   .sign-in-form {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 16px; /* Space between form elements */
   }
@@ -75,11 +77,13 @@
   }
   
   .input-field {
-    width: 100%;
+    width: 18rem;
     border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 4px;
+    padding: .8rem 0.4rem;
+    border-radius: 8px;
     transition: border-color 0.3s;
+    background: transparent;
+    font: inherit;
   }
   
   .input-field:focus {
@@ -167,4 +171,7 @@
   .sign-up-prompt {
     text-align: center;
     margin-top: 8px;
+  }
+  .arrow-left{
+    font-weight: 900;
   }
