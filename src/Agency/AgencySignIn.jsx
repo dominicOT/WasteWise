@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import googleIcon from '../assets/google-icon.svg';
+// import googleIcon from '../assets/google-icon.svg';
 import "../Auth/SignIn.css";
 import { ArrowLeft } from "lucide-react"
 import logo from "../assets/logo.png"
+
+
 const AgencySignIn = () => {
   const navigate = useNavigate();
   const handleButtonClick = () => {
     navigate("/auth");
   };
   const handleSignInClick = () => {
-    navigate("/home");
+    navigate("/agencydo");
   };
 
   const [email, setEmail] = useState('');
