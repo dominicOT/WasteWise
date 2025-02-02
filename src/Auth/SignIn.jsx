@@ -93,10 +93,12 @@ const SignIn = () => {
         </div>
 
         {/* Google Sign-In */}
-        <button className="google-sign-in-button">
-          <img src={googleIcon} alt="Google Icon" className="google-icon" />
-          Sign In with Google
-        </button>
+        <div className="signIn-btn">
+          <button className="google-sign-in-button">
+            <img src={googleIcon} alt="Google Icon" className="google-icon" />
+            Sign In with Google
+          </button>
+        </div>
 
         {/* Sign Up Link */}
         <p className="sign-up-prompt">

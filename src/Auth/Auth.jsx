@@ -18,7 +18,7 @@ const Auth = () => {
       </div>
 
       <div className="content-container">
-        <h1 className="welcome-heading">welcome</h1>
+        <h1 className="welcome-heading">Welcome</h1>
 
         <div className="button-group">
           <button className="create-account-button" onClick={handleButtonClick}>
