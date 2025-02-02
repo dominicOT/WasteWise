@@ -1,0 +1,53 @@
+body{
+    background: white;
+}
+.arrow-left, .user-text, .agency-text,.admin-text{
+    color: black;
+    text-align: center;
+    font-weight: 500;
+}
+.header-section{
+    display: flex;
+    margin: 1rem;
+}
+.arrow-left-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #a8ebd0;
+    width: 30px;
+    height: 30px;
+    padding: .5rem;
+    border-radius: 100%;
+}
+.header-text{
+    color: #000;
+    position: relative;
+    left: 5rem;
+    top: .7rem;
+    font-weight: 500;
+}
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.admin-option,.agency-option,.user-option{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin,.user,.agency{
+    background-color: #a8ebd0;
+    color: #259E73;
+    padding: 1.5rem;
+    margin: .5rem;
+    border-radius: 10px;
+}
+.userCog,.building-two,.userRound{
+    color: #259E73;
+    font-weight: 500;
+    
+}

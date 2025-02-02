@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import logo from "../assets/rr.png";
 import google from "../assets/google-icon.svg";
 import "./Auth.css";
@@ -30,9 +30,9 @@ const Auth = () => {
           </button>
           <p className="signin-prompt">
             Already have an account?{" "}
-            <a href="#" className="signin-link">
+            <Link to={'/sign-in-options'} className="signin-link">
               sign in
-            </a>
+            </Link>
           </p>
         </div>
       </div>

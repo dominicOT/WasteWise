@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png';
 import googleIcon from '../assets/google-icon.svg';
-import "./SignIn.css"
+import "../Auth/SignIn.css";
 import { ArrowLeft } from "lucide-react"
-
-const SignIn = () => {
+import logo from "../assets/logo.png"
+const AdminSignIn = () => {
   const navigate = useNavigate();
   const handleButtonClick = () => {
     navigate("/auth");
@@ -34,7 +33,7 @@ const SignIn = () => {
 
         {/* Title */}
         <h2 className="sign-in-title">
-          Sign into your account
+           Welcome Back
         </h2>
 
         {/* Logo */}
@@ -82,34 +81,9 @@ const SignIn = () => {
           </button>
         </form>
 
-        {/* Divider */}
-        <div className="divider-container">
-          <div className="divider-line" />
-          <div className="divider-text-container">
-            <span className="divider-text">
-              Or
-            </span>
-          </div>
-        </div>
-
-        {/* Google Sign-In */}
-        <div className="signIn-btn">
-          <button className="google-sign-in-button">
-            <img src={googleIcon} alt="Google Icon" className="google-icon" />
-            Sign In with Google
-          </button>
-        </div>
-
-        {/* Sign Up Link */}
-        <p className="sign-up-prompt">
-          Do not have an account?{' '}
-          <a href="#" className="sign-up-link">
-            Sign Up
-          </a>
-        </p>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default AdminSignIn;
