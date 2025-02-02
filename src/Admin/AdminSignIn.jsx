@@ -10,7 +10,7 @@ const AdminSignIn = () => {
     navigate("/auth");
   };
   const handleSignInClick = () => {
-    navigate("/home");
+    navigate("/admin-dashboard");
   };
 
   const [email, setEmail] = useState('');

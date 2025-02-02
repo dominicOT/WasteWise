@@ -7,6 +7,7 @@ import Home from "./Home/Home"
 import SignInOptions from "./Auth/SignInOptions";
 import AdminSignIn from "./Admin/AdminSignIn";
 import AgencySignIn from "./Agency/AgencySignIn";
+import AdminDashboard from "./Admin/AdminDashboard";
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/sign-in-options" element={<SignInOptions />}/>
         <Route path="/home" element={<Home />} />
         <Route path="/admin-login" element={<AdminSignIn />}/>
+        <Route path="/admin-dashboard" element={<AdminDashboard />}/>
         <Route path="/agency-login" element={<AgencySignIn />}/>
       </Routes>
     </Router>
